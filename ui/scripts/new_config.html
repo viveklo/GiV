@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Giv_main</title>
+
+<link rel="stylesheet" media="all" type="text/css" href="../css/ui-lightness/jquery-ui-1.8.21.custom.css">
+<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-timepicker-addon.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-sliderAccess.js"></script>
+<!--script type="text/javascript" src="../js/givui.js"-->
+<script type="text/javascript" src="givui.js"> </script>
+
+</head>
+
+<body>
+<div  id="head" align="center" style="font-family: Cooper Black; font-size: 25px;">
+Camera Configuration
+</div>
+<form method="get" action="../../scripts/givui.php" name="giv_form"><br>
+<table style="text-align: left; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="10">
+<tbody>
+<tr>
+<td style="width: 408px; height: 5px; background-color: #F6AF3A;"><span style="text-decoration: underline;"><input name="camera1cb" value="cam1" type="checkbox" onchange="changefield('cam1')" ></span><font style="color: white;" size="+1"><span style="font-family: Cooper Black;">
+Camera 1</span></font></td>
+<td style="width: 408px; height: 5px; font-family: Cooper Black; background-color: #F6AF3A;"><font size="+1"><input  name="camera2cb" value="cam2" type="checkbox"  onchange="changefield('cam2')"><span style="color: white;">Camera 2</span></font></td>
+
+
+</tr>
+<tr>
+<td><img style="border: 0px solid ; width: 408px; height: 254px;" alt="Camera 1" src="../images/cam1.jpg"></td>
+<td><img style="border: 0px solid ; width: 408px; height: 254px;" alt="Camera 2" src="../images/cam2.jpg"></td>
+
+
+</tr>
+<tr>
+<td>
+<table style="width: 100%; text-align: left; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="2">
+<tbody>
+<tr style="font-family: Cooper Black; color: white; font-size: 14px;">
+<td style="background-color: #F6AF3A;">
+Camera Name: &nbsp; <input type="text" name="cameraname1" size="10" disabled="disabled"/> Image File: &nbsp;  <input type="text" name="imagefile1" size="10" /></td>
+</tr>
+<tr style="font-family: Cooper Black; color: white;">
+<td style="background-color: #F6AF3A; font-size: 14px;" >
+Mark Area On Image: &nbsp;
+<button value="Show Area" name="showareacam1" onclick="draw()" type="button" style="font-family: Cooper Black;" > Show Area </button>
+<button value="Clear Area" name="clearareacam1" onclick="reloadPage()" type="button" style="font-family: Cooper Black;"> Clear Area </button></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<table style="width: 100%; text-align: left; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="2">
+<tbody>
+<tr style="font-family: Cooper Black; color: white; font-size: 14px;">
+<td style="background-color: #F6AF3A;">
+Camera Name: &nbsp; <input type="text" name="cameraname2" size="10"/> Image File: &nbsp;  <input type="text" name="imagefile2" size="10" /></td>
+</tr>
+<tr style="font-family: Cooper Black; color: white;">
+<td style="background-color: #F6AF3A; font-size: 14px;">
+Mark Area On Image: &nbsp;
+<button value="Show Area" name="showareacam2" onclick="draw()" type="button" style="font-family: Cooper Black;" > Show Area </button>
+<button value="Clear Area" name="clearareacam2" onclick="reloadPage()" type="button" style="font-family: Cooper Black;"/> Clear Area </button></td>
+</tr>
+</tbody>
+</table>
+</td>
+
+
+</tr>
+</tbody>
+</table>
+
+
+<table style="text-align: left; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="10">
+<tbody>
+<tr>
+<td style="width: 408px; height: 5px; background-color: #F6AF3A;"><span style="text-decoration: underline;"><input name="camera3cb" value="cam3" type="checkbox"  onchange="changefield('cam3')"></span><font style="color: white;" size="+1"><span style="font-family: Cooper Black;">
+Camera 3</span></font></td>
+<td style="width: 408px; height: 5px; font-family: Cooper Black; background-color: #F6AF3A;"><font size="+1"><input name="camera4cb" value="cam4" type="checkbox"  onchange="changefield('cam4')"><span style="color: white;">Camera 4</span></font></td>
+
+
+</tr>
+<tr>
+<td><img style="border: 0px solid ; width: 408px; height: 254px;" alt="Camera 3" src="../images/cam1.jpg"></td>
+<td><img style="border: 0px solid ; width: 408px; height: 254px;" alt="Camera 4" src="../images/cam2.jpg"></td>
+
+
+</tr>
+<tr>
+<td>
+<table style="width: 100%; text-align: left; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="2">
+<tbody>
+<tr style="font-family: Cooper Black; color: white; font-size: 14px;">
+<td style="background-color: #F6AF3A">
+Camera Name: &nbsp; <input type="text" name="cameraname3" size="10" disabled="disabled"/> Image File: &nbsp;  <input type="text" name="imagefile3" size="10" disabled="disabled"/></td>
+</tr>
+<tr style="font-family: Cooper Black; color: white;">
+<td style="background-color: #F6AF3A; font-size: 14px;">
+Mark Area On Image: &nbsp;
+<button value="Show Area" name="showareacam3" onclick="draw()" type="button" style="font-family: Cooper Black;" > Show Area </button>
+<button value="Clear Area" name="clearareacam3" onclick="reloadPage()" type="button" style="font-family: Cooper Black;"/> Clear Area </button></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<table style="width: 100%; text-align: left; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="2">
+<tbody>
+<tr style="font-family: Cooper Black; color: white; font-size: 14px;">
+<td style="background-color: #F6AF3A;">
+Camera Name: &nbsp; <input type="text" name="cameraname4" size="10"/> Image File: &nbsp;  <input type="text" name="imagefile4" size="10" /></td>
+</tr>
+<tr style="font-family: Cooper Black; color: white;">
+<td style="background-color: #F6AF3A; font-size: 14px;">
+Mark Area On Image: &nbsp;
+<button value="Show Area" name="showareacam4" onclick="draw()" type="button" style="font-family: Cooper Black;" > Show Area </button>
+<button value="Clear Area" name="clearareacam4" onclick="reloadPage()" type="button" style="font-family: Cooper Black;"/> Clear Area </button></td>
+</tr>
+</tbody>
+</table>
+</td>
+
+
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+<br>
+<!--input alt="Give Me" src="configure.png" name="submit_giv" height="35" hspace="450" type="image" width="198"-->
+<div  id="config" align="center">
+<input alt="Give Me" src="configure.png" name="submit_giv"  type="image" />
+</div>
+
+</form>
+</body></html>

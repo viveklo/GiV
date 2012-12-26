@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Giv_main</title>
+
+<link rel="stylesheet" media="all" type="text/css" href="../css/ui-lightness/jquery-ui-1.8.21.custom.css">
+<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-timepicker-addon.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-sliderAccess.js"></script>
+<script type="text/javascript">
+$(function(){$('#camera1fromdt').datetimepicker()});
+$(function(){$('#camera1todt').datetimepicker()});
+$(function(){$('#camera2fromdt').datetimepicker()});
+$(function(){$('#camera2todt').datetimepicker()});
+</script></head>
+<body>
+<img style="width: 136px; height: 48px;" alt="GiV" src="../images/Giv.png" hspace="500"><br>
+<form method="get" action="../../scripts/givui.php" name="giv_form"><br>
+<table style="text-align: left; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="10">
+<tbody>
+<tr>
+<td style="width: 408px; height: 5px; background-color: rgb(246, 175, 58);"><span style="text-decoration: underline;"><input disabled="disabled" name="camera1" value="cam1" type="checkbox"></span><font style="color: white;" size="+1"><span style="font-family: Cooper Black;">Camera
+1</span></font></td>
+<td style="width: 408px; height: 5px; font-family: Cooper Black; background-color: rgb(246, 175, 58);"><font size="+1"><input checked="checked" name="camera2" value="cam2" type="checkbox"><span style="color: white;">Camera 2</span></font></td>
+</tr>
+<tr>
+<td><a href="cam1config.html"><img style="border: 0px solid ; width: 408px; height: 254px;" alt="Camera 1" src="../images/cam1.jpg"></a></td>
+<td><a href="cam2config.html"><img style="border: 0px solid ; width: 408px; height: 254px;" alt="Camera 2" src="../images/cam2.jpg"></a></td>
+</tr>
+<tr>
+<td>
+<table style="width: 100%; text-align: left; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="2">
+<tbody>
+<tr style="font-family: Cooper Black; color: white;">
+<td style="background-color: rgb(246, 175, 58);">From
+Date and Time: <input id="startdatecamera1" name="startdatecamera1"></td>
+</tr>
+<tr style="font-family: Cooper Black; color: white;">
+<td style="background-color: rgb(246, 175, 58);">To
+Date and Time: &nbsp; &nbsp; &nbsp; <input id="enddatecamera1" name="enddatecamera1"></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<table style="width: 100%; text-align: left; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="2">
+<tbody>
+<tr style="font-family: Cooper Black; color: white;">
+<td style="background-color: rgb(246, 175, 58);">From
+Date and Time: <input id="startdatecamera2" name="startdatecamera2"></td>
+</tr>
+<tr style="font-family: Cooper Black; color: white;">
+<td style="background-color: rgb(246, 175, 58);">To
+Date and Time: &nbsp; &nbsp; &nbsp; <input id="enddatecamera2" name="enddatecamera2"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+&nbsp;<input alt="Give Me" src="../images/Givme.png" name="submit_giv" height="35" hspace="450" type="image" width="198"><br>
+</form>
+</body></html>

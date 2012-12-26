@@ -1,0 +1,11 @@
+filedbfolder=/opt/lampp/htdocs/xampp/giv/filedb
+cameracount=0
+camera1=cam1
+camera2=cam2
+ftpserver=127.0.0.1
+ftpport=21
+ftpusername=fedora
+ftppwd=fedora123
+ftpfolder=.
+httpserverbase=http://localhost/xampp/giv
+httpserverdb=http://localhost/xampp/giv/filedb

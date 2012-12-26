@@ -1,0 +1,48 @@
+#grid img {
+float: left;
+ margin: 5px;
+}
+
+#styledSelect {
+background: transparent;
+width: 268px;
+padding: 5px;
+font-size: 16px;
+border: 1px solid #ccc;
+height: 34px;
+background:#58B14C;
+color: #FFFFFF; 
+}
+
+.prevnext {
+font-family:"Arial";
+font-size:14px;
+}
+.prevbutton{
+background:white url('../images/left_grey_small.png') no-repeat top;
+color:white;
+width:20px;
+height:20px;
+}
+
+.nextbutton{
+background:white url('../images/right_grey_small.png') no-repeat top;
+color:white;
+width:20px;
+height:20px;
+}
+
+.image-with-text{
+float: left;
+text-align: center;
+width: 130px;
+font-family: "Arial";
+font-size:10px;
+margin-right:5px;
+}
+.image-with-text img{
+display: block;
+margin: 0 auto;
+width: 130px;
+height: 100px;
+}

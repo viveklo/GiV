@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Camera 2 Configuration</title>
+
+<style type="text/css">
+#canvas{background-image:url('../images/cam2.jpg');}
+</style>
+<script type="text/javascript">
+
+      var cordinates = [];
+      var count = 0;
+
+      document.addEventListener("DOMContentLoaded", init, false);
+
+      function init()
+      {
+        var canvas = document.getElementById("canvas");
+        canvas.addEventListener("mousedown", getPosition, false);
+      }
+
+      function getPosition(event)
+      {
+        var x = new Number();
+        var y = new Number();
+        var canvas = document.getElementById("canvas");
+
+        if (event.x != undefined && event.y != undefined)
+        {
+          x = event.x;
+          y = event.y;
+        }
+        else // Firefox method to get the position
+        {
+          x = event.clientX + document.body.scrollLeft +
+              document.documentElement.scrollLeft;
+          y = event.clientY + document.body.scrollTop +
+              document.documentElement.scrollTop;
+        }
+
+        x -= canvas.offsetLeft;
+        y -= canvas.offsetTop;
+
+//        document.pointform.form_x.value = x;
+//        document.pointform.form_y.value = y;
+
+       // alert("count");
+   
+        if(count < 24)
+        {
+	   //draw the point
+	   var canvas=document.getElementById("canvas") 
+	   var ctx = canvas.getContext('2d'); 
+	   ctx.beginPath();
+	   ctx.arc(x, y, 4, 0, 2 * Math.PI, false);
+	   ctx.fillStyle = "#f00";
+	   ctx.fill();
+	   ctx.fill();
+	   
+	   //store the coordinates
+           cordinates[count] = x;
+           count = count + 1;
+           cordinates[count] = y;
+           count = count + 1;  
+        }
+        else
+        {
+           alert ("Not more than 12 points allowed");
+        }  
+
+        //alert("x: " + x + "  y: " + y);
+      }
+
+
+      function draw()
+      {
+         var canvas=document.getElementById("canvas") 
+         var ctx = canvas.getContext('2d'); 
+         ctx.fillStyle = '#f00'; 
+         alert(cordinates.length);
+         ctx.beginPath(); 
+         ctx.moveTo(cordinates[0], cordinates[1]); 
+	 index = 2;
+	 while (index <cordinates.length)
+	 {
+	    ctx.lineTo( cordinates[index] , cordinates[index+1] );
+	    index = index+2;
+	 }
+         ctx.closePath(); 
+         ctx.stroke();
+      } 
+
+      function clear()
+      {
+         var canvas = document.getElementById("canvas");
+         var context = canvas.getContext("2d");
+	 context.save(); 
+	  
+	 // Use the identity matrix while clearing the canvas 
+	 context.setTransform(1, 0, 0, 1, 0, 0); 
+	 context.clearRect(0, 0, canvas.width, canvas.height); 
+	  
+	 // Restore the transform 
+	 context.restore(); 
+	// context.beginPath(); 
+        // context.clearRect(0, 0, canvas.width, canvas.height);
+	// canvas.width = canvas.width; 
+         cordinates = [];
+         count = 0;
+      }
+      function reloadPage()
+      {
+          window.location.reload()
+      }
+</script>
+</head>
+<body>
+<form>
+<table style="text-align: left; width: 764px; height: 497px;" border="0" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="height: 480px; width: 640px;">
+<canvas id="canvas" width="640" height="480"></canvas><!--img style="width: 640px; height: 480px;" alt="Camera 2 Configuration" src="../images/cam2.jpg"--></td>
+<td style="vertical-align: top; text-align: center;"><span style="font-family: Cooper Black;">Configure Interesting Area</span><br>
+<br>
+<input value="Show Area" name="Show Area" onclick="draw()" type="button"/><br>
+<br>
+<input value="Clear Area" name="Clear Area" onclick="reloadPage()" type="button"/><br>
+<br>
+<input value="Done" name="Done" type="button"/></td>
+</tr>
+</tbody>
+</table>
+</form>
+</body></html>
