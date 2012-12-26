@@ -106,7 +106,11 @@ function populate_clusterdb ($clust, $camera)
 
          $clusterdir = $configarr["filedbfolder"]."/clusterdb/".$camera."/".$datefoldername."/".$timefoldername."/";
          if (!(file_exists($clusterdir) && is_dir($clusterdir)))
+         {
+            $old_umask = umask(0);
             mkdir($clusterdir,0777,true);
+            umask($old_umask);
+         }
 
          $file = fopen($clusterdir.$file_with_ext."_c.txt", "a") or exit("Unable to open file".$file_with_ext."_c.txt"."\n");
 

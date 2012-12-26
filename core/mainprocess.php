@@ -146,7 +146,9 @@ foreach  ($camlist as $datefolder)
 	 else
 	 {
 	    //make dir for the video to be downloaded from ftp server
+            $old_umask = umask(0);
 	    mkdir($processdir, 0777,true);
+            umask($old_umask);
 	    //echo $motionfile." file does not exists\n";
 	    //Get the file from NVR	    
             //local file name with directory
